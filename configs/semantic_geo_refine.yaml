@@ -1,0 +1,19 @@
+inherits: configs/base_config.yaml
+
+stage2_geo_semantic:
+  enable_semantic_injection: true
+  enable_proxy_mesh_constraint: false
+  enable_instance_decoupling: false
+
+model:
+  semantic_dim: 16
+  num_classes: 4
+
+loss:
+  lambda_sem: 0.1
+  use_ssim: true
+  ssim_lambda: 0.2
+
+notes:
+  - Keep semantic_dim at 16/32 on RTX 4050 to balance memory and edge sharpness.
+  - Raise lambda_sem after RGB geometry becomes stable.

@@ -1,0 +1,36 @@
+project:
+  name: geo_semantic_splatting
+  stage: stage2
+
+data:
+  scene_root: data/processed/scene_01
+  images_dir: data/processed/scene_01/images
+  transforms_path: data/processed/scene_01/transforms.json
+  semantic_masks_dir: data/processed/scene_01/sam2_out/id_masks
+  semantic_classes_path: configs/semantic_classes_scene01.json
+  mask_ext: .png
+
+model:
+  num_gaussians: 50000
+  semantic_dim: 16
+  num_classes: 4
+  semantic_init_std: 0.01
+
+train:
+  max_steps: 30000
+  batch_size: 1
+  lr:
+    gaussians: 0.00016
+    semantic_features: 0.001
+    semantic_head: 0.001
+
+loss:
+  rgb_loss_type: l1
+  lambda_sem: 0.1
+  use_ssim: true
+  ssim_lambda: 0.2
+  ignore_index: -100
+
+runtime:
+  device: cuda
+  mixed_precision: false

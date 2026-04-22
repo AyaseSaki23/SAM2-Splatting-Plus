@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Virtual envs
+venv/
+.venv/
+
+# Torch / CUDA build caches
+.torch_extensions/
+torch_extensions/
+
+# Logs
+*.log
+*.out
+*.err
+tensorboard/
+runs/
+wandb/
+
+# Training outputs and checkpoints
+outputs/
+outputs_stage2/
+exports/
+*.ckpt
+*.pth
+*.pt
+*.ply
+
+# Data artifacts
+data/
+data/processed/
+data/prompts/
+data/**/sam2_out/
+data/**/images/
+data/raw/
+sam2/
+
+# SAM2 / local model weights
+sam2/checkpoints/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Project notes not meant for repo
+AGENTS.md
